@@ -71,7 +71,7 @@
     <version.guru.nidi>0.18.0</version.guru.nidi>
     <version.info.picocli>4.7.7</version.info.picocli>
     <version.io.micrometer>1.14.12</version.io.micrometer>
-    <version.io.quarkus>3.27.2</version.io.quarkus>
+    <version.io.quarkus>3.27.2</version.io.quarkus> <!-- Quarkus 3.27 LTS -->
     <version.io.netty>4.1.130.Final</version.io.netty>
     <version.io.smallrye.openapi.core>4.0.12</version.io.smallrye.openapi.core>
     <version.io.smallrye.config.core>3.13.4</version.io.smallrye.config.core>
@@ -223,7 +223,7 @@
     <version.archunit.junit5>1.4.0</version.archunit.junit5>
 
     <version.io.vertx>4.5.23</version.io.vertx>
-    <version.at.yawk.lz4.java>1.10.1</version.at.yawk.lz4.java>
+    <version.at.yawk.lz4.java>1.10.1</version.at.yawk.lz4.java> <!-- CVE fix: replaces org.lz4:lz4-java -->
   </properties>
 
   <dependencyManagement>
@@ -1323,6 +1323,7 @@
         <artifactId>kafka-clients</artifactId>
         <version>${version.org.apache.kafka}</version>
         <exclusions>
+          <!-- Kafka 4.0 brings org.lz4:lz4-java which conflicts with at.yawk.lz4:lz4-java CVE fix -->
           <exclusion>
             <groupId>org.lz4</groupId>
             <artifactId>lz4-java</artifactId>

@@ -135,6 +135,7 @@
                             <version>${version.io.quarkus}</version>
                         </path>
                     </annotationProcessorPaths>
+                    <!-- legacyConfigRoot=true removed: Quarkus 3.25+ no longer supports legacy config classes -->
                 </configuration>
             </plugin>
             <plugin>
